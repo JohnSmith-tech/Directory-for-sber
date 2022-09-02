@@ -3,8 +3,11 @@ package com.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
-
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 
 public final class App {
     private App() {
@@ -13,9 +16,13 @@ public final class App {
     /**
      * 
      * @param args The arguments of the program.
+     * @throws URISyntaxException
      */
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("Задача ВС Java Сбер.csv");
+    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+    
+        URL resource = App.class.getResource("/Задача ВС Java Сбер.csv");
+        File file = new File(resource.toURI());
+
         Scanner scanner = new Scanner(file);
 
         List<City> cities = new ArrayList<>();
