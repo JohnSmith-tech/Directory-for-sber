@@ -13,11 +13,7 @@ public final class App {
     private App() {
     }
 
-    /**
-     * 
-     * @param args The arguments of the program.
-     * @throws URISyntaxException
-     */
+
     public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
     
         URL resource = App.class.getResource("/Задача ВС Java Сбер.csv");
@@ -58,6 +54,7 @@ public final class App {
             System.out.println(pair.getKey() + " - " + pair.getValue());
         }
     }
+    
     static void printMaxPopulation(List<City> cities) {
         int answer = 0;
         for (int i = 1; i < cities.size(); i++) {
